@@ -217,11 +217,8 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
 }
 
-/* Bubbles: slightly smaller on medium screens */
+/* Slightly smaller bubbles at 992px */
 @media (max-width: 992px) {
-    .hero-icons-container {
-        height: 300px;
-    }
     .hero-icon-circle {
         width: 100px;
         height: 100px;
@@ -234,8 +231,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Tablet & mobile: col-lg-6 stacks, so bubbles column becomes full-width.
-   Switch to a compact 2×2 grid with center bubble below. */
+/* Below lg breakpoint: hide the bubble column entirely, keep text full-width */
 @media (max-width: 991px) {
     .hero-section {
         min-height: auto;
@@ -250,50 +246,8 @@ h1, h2, h3, h4, h5, h6 {
     .hero-subtitle {
         font-size: 0.95rem;
     }
-
-    /* Grid layout for bubbles */
-    .hero-icons-container {
-        position: relative;
-        height: auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto;
-        gap: 0.75rem;
-        width: fit-content;
-        margin: 1.5rem auto 0;
-        padding: 0.5rem;
-    }
-
-    /* icon-1 top-left, icon-2 top-right, icon-3 bottom-left, icon-4 bottom-right */
-    .hero-icon-circle.icon-1 { grid-column: 1; grid-row: 1; }
-    .hero-icon-circle.icon-2 { grid-column: 3; grid-row: 1; }
-    .hero-icon-circle.icon-3 { grid-column: 1; grid-row: 2; }
-    .hero-icon-circle.icon-4 { grid-column: 3; grid-row: 2; }
-    .hero-center-icon        { grid-column: 2; grid-row: 1 / span 2; align-self: center; justify-self: center; }
-
-    .hero-icon-circle {
-        position: static;
-        transform: none !important;
-        width: 72px;
-        height: 72px;
-        font-size: 1.7rem;
-        animation: none !important;
-    }
-    .hero-icon-circle:hover {
-        transform: scale(1.08) !important;
-    }
-    .hero-center-icon {
-        position: static;
-        transform: none !important;
-        width: 80px;
-        height: 80px;
-        font-size: 2rem;
-        animation: pulse-center-mobile 2s ease-in-out infinite !important;
-    }
-
-    @keyframes pulse-center-mobile {
-        0%, 100% { box-shadow: 0 0 20px rgba(230, 57, 70, 0.5); }
-        50%       { box-shadow: 0 0 35px rgba(230, 57, 70, 0.8); }
+    .hero-image {
+        display: none;
     }
 }
 
@@ -326,22 +280,6 @@ h1, h2, h3, h4, h5, h6 {
     .hero-features span {
         font-size: 0.8rem;
     }
-
-    /* Smaller bubbles on phones */
-    .hero-icons-container {
-        gap: 0.5rem;
-    }
-    .hero-icon-circle {
-        width: 56px;
-        height: 56px;
-        font-size: 1.3rem;
-    }
-    .hero-center-icon {
-        width: 62px;
-        height: 62px;
-        font-size: 1.5rem;
-    }
-
     .btn {
         font-size: 0.82rem;
         padding: 0.45rem 0.9rem;
@@ -1530,7 +1468,9 @@ a, button, .btn, .card {
     display: flex;
     gap: 1.5rem;
     width: max-content;
-    animation: servicesScroll 30s linear infinite;
+    animation: servicesScroll 55s linear infinite;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .services-scroll-track:hover {

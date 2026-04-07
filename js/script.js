@@ -981,7 +981,7 @@ function showHeroDetail(key) {
         const currentX = getCurrentTranslateX();
         const halfWidth = track.scrollWidth / 2;
         const progress = Math.abs(currentX) / halfWidth;  // 0–1
-        const duration = 30;  // seconds, matches CSS
+        const duration = 55;  // seconds, matches CSS
         const elapsed = progress * duration;
 
         track.style.animation = `servicesScroll ${duration}s linear ${-elapsed}s infinite`;
