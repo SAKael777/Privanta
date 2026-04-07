@@ -1514,6 +1514,12 @@ a, button, .btn, .card {
     overflow: hidden;
     width: 100%;
     position: relative;
+    cursor: grab;
+    user-select: none;
+}
+
+.services-scroll-wrapper.dragging {
+    cursor: grabbing;
 }
 
 .services-scroll-wrapper::before,

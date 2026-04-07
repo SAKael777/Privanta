@@ -927,6 +927,77 @@ function showHeroDetail(key) {
 }
 
 // ============================================
+// Services Strip - Drag to Scroll
+// ============================================
+
+(function() {
+    const wrapper = document.querySelector('.services-scroll-wrapper');
+    const track = document.querySelector('.services-scroll-track');
+    if (!wrapper || !track) return;
+
+    let isDragging = false;
+    let startX = 0;
+    let dragOffset = 0;       // accumulated manual drag offset
+    let animOffset = 0;       // auto-scroll position at drag start
+    let rafId = null;
+
+    // Read current CSS translateX from the running animation
+    function getCurrentTranslateX() {
+        const matrix = window.getComputedStyle(track).transform;
+        if (!matrix || matrix === 'none') return 0;
+        return parseFloat(matrix.split(',')[4]) || 0;
+    }
+
+    function onDragStart(e) {
+        isDragging = true;
+        wrapper.classList.add('dragging');
+        startX = (e.touches ? e.touches[0].clientX : e.clientX);
+        animOffset = getCurrentTranslateX();
+        dragOffset = 0;
+
+        // Freeze animation at current position
+        track.style.animation = 'none';
+        track.style.transform = `translateX(${animOffset}px)`;
+    }
+
+    function onDragMove(e) {
+        if (!isDragging) return;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        dragOffset = clientX - startX;
+        const halfWidth = track.scrollWidth / 2;
+        let newX = animOffset + dragOffset;
+
+        // Wrap within the seamless loop bounds
+        newX = ((newX % halfWidth) - halfWidth) % halfWidth;
+        track.style.transform = `translateX(${newX}px)`;
+    }
+
+    function onDragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        wrapper.classList.remove('dragging');
+
+        // Resume animation from current position
+        const currentX = getCurrentTranslateX();
+        const halfWidth = track.scrollWidth / 2;
+        const progress = Math.abs(currentX) / halfWidth;  // 0–1
+        const duration = 30;  // seconds, matches CSS
+        const elapsed = progress * duration;
+
+        track.style.animation = `servicesScroll ${duration}s linear ${-elapsed}s infinite`;
+        track.style.transform = '';
+    }
+
+    wrapper.addEventListener('mousedown', onDragStart);
+    window.addEventListener('mousemove', onDragMove);
+    window.addEventListener('mouseup', onDragEnd);
+
+    wrapper.addEventListener('touchstart', onDragStart, { passive: true });
+    window.addEventListener('touchmove', onDragMove, { passive: true });
+    window.addEventListener('touchend', onDragEnd);
+})();
+
+// ============================================
 // Remove modal backdrop on hide
 // ============================================
 
