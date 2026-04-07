@@ -1,0 +1,13 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /Privanta/
+
+# Redirect requests with .html to clean URL
+RewriteCond %{THE_REQUEST} \s/+Privanta/(.+?)\.html[\s?] [NC]
+RewriteRule ^ /Privanta/%1 [R=301,L,NE]
+
+# Serve .html file for clean URL requests
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]

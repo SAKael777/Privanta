@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privanta - Your Digital Solutions Partner</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="bi bi-code-slash"></i> Privanta
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="event.preventDefault(); new bootstrap.Modal(document.getElementById('contactModal')).show();">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section py-5 bg-gradient">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-white mb-5 mb-lg-0">
+                    <h1 class="display-3 fw-bold mb-4 hero-title">Welcome to Privanta</h1>
+                    <p class="lead mb-4 hero-subtitle">Your trusted partner for custom web applications, mobile solutions, and creative digital services. We transform your ideas into reality with cutting-edge technology and design excellence.</p>
+                    
+                    <!-- Key Features -->
+                    <div class="hero-features mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle-fill text-success me-3" style="font-size: 1.5rem;"></i>
+                            <span>Expert team with years of industry experience</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle-fill text-success me-3" style="font-size: 1.5rem;"></i>
+                            <span>12+ Comprehensive Services to meet all your needs</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success me-3" style="font-size: 1.5rem;"></i>
+                            <span>Modern technology stack and best practices</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 flex-wrap">
+                        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">Get Started</button>
+                        <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">Learn More</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image text-center">
+                        <!-- Animated Icons -->
+                        <div class="hero-icons-container">
+                            <div class="hero-icon-circle icon-1" onclick="showHeroDetail('web')" style="cursor:pointer;">
+                                <i class="bi bi-laptop"></i>
+                            </div>
+                            <div class="hero-icon-circle icon-2" onclick="showHeroDetail('mobile')" style="cursor:pointer;">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <div class="hero-icon-circle icon-3" onclick="showHeroDetail('media')" style="cursor:pointer;">
+                                <i class="bi bi-film"></i>
+                            </div>
+                            <div class="hero-icon-circle icon-4" onclick="showHeroDetail('infrastructure')" style="cursor:pointer;">
+                                <i class="bi bi-server"></i>
+                            </div>
+                            <div class="hero-center-icon" onclick="showHeroDetail('privanta')" style="cursor:pointer;">
+                                <i class="bi bi-lightning-fill"></i>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Our Services</h2>
+                <p class="lead text-muted">Comprehensive solutions tailored to your business needs</p>
+            </div>
+        </div>
+        <div class="services-scroll-wrapper">
+            <div class="services-scroll-track">
+                <!-- Original set -->
+                <div class="service-scroll-card" onclick="showServiceDetail('Software Services')">
+                    <div class="service-icon mb-3"><i class="bi bi-code-square display-4 text-primary"></i></div>
+                    <h5 class="fw-bold mb-2">Software Services</h5>
+                    <p class="text-muted">Custom web apps, mobile apps, and desktop software built with modern frameworks.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('Video Editing')">
+                    <div class="service-icon mb-3"><i class="bi bi-film display-4 text-danger"></i></div>
+                    <h5 class="fw-bold mb-2">Video Editing</h5>
+                    <p class="text-muted">Professional video editing for ads, reels, promos, and corporate content.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('Photo Editing')">
+                    <div class="service-icon mb-3"><i class="bi bi-image display-4 text-info"></i></div>
+                    <h5 class="fw-bold mb-2">Photo Editing</h5>
+                    <p class="text-muted">Expert photo retouching and enhancement for products, portraits, and events.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('Logo Design')">
+                    <div class="service-icon mb-3"><i class="bi bi-palette display-4 text-warning"></i></div>
+                    <h5 class="fw-bold mb-2">Logo Design</h5>
+                    <p class="text-muted">Memorable brand identity designs that represent your business perfectly.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('Tarp and Banners Custom Design')">
+                    <div class="service-icon mb-3"><i class="bi bi-flag display-4 text-warning"></i></div>
+                    <h5 class="fw-bold mb-2">Tarp & Banner Design</h5>
+                    <p class="text-muted">Eye-catching custom designs for events, advertising, and branding.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('CCTV Installations')">
+                    <div class="service-icon mb-3"><i class="bi bi-camera-video display-4 text-danger"></i></div>
+                    <h5 class="fw-bold mb-2">CCTV Installations</h5>
+                    <p class="text-muted">Professional HD surveillance setup, configuration, and maintenance.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('Server Setup')">
+                    <div class="service-icon mb-3"><i class="bi bi-server display-4 text-primary"></i></div>
+                    <h5 class="fw-bold mb-2">Server Setup</h5>
+                    <p class="text-muted">Complete server deployment, security hardening, and infrastructure management.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="service-scroll-card" onclick="showServiceDetail('Software Services')">
+                    <div class="service-icon mb-3"><i class="bi bi-code-square display-4 text-primary"></i></div>
+                    <h5 class="fw-bold mb-2">Software Services</h5>
+                    <p class="text-muted">Custom web apps, mobile apps, and desktop software built with modern frameworks.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('Video Editing')">
+                    <div class="service-icon mb-3"><i class="bi bi-film display-4 text-danger"></i></div>
+                    <h5 class="fw-bold mb-2">Video Editing</h5>
+                    <p class="text-muted">Professional video editing for ads, reels, promos, and corporate content.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('Photo Editing')">
+                    <div class="service-icon mb-3"><i class="bi bi-image display-4 text-info"></i></div>
+                    <h5 class="fw-bold mb-2">Photo Editing</h5>
+                    <p class="text-muted">Expert photo retouching and enhancement for products, portraits, and events.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('Logo Design')">
+                    <div class="service-icon mb-3"><i class="bi bi-palette display-4 text-warning"></i></div>
+                    <h5 class="fw-bold mb-2">Logo Design</h5>
+                    <p class="text-muted">Memorable brand identity designs that represent your business perfectly.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('Tarp and Banners Custom Design')">
+                    <div class="service-icon mb-3"><i class="bi bi-flag display-4 text-warning"></i></div>
+                    <h5 class="fw-bold mb-2">Tarp & Banner Design</h5>
+                    <p class="text-muted">Eye-catching custom designs for events, advertising, and branding.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('CCTV Installations')">
+                    <div class="service-icon mb-3"><i class="bi bi-camera-video display-4 text-danger"></i></div>
+                    <h5 class="fw-bold mb-2">CCTV Installations</h5>
+                    <p class="text-muted">Professional HD surveillance setup, configuration, and maintenance.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+                <div class="service-scroll-card" onclick="showServiceDetail('Server Setup')">
+                    <div class="service-icon mb-3"><i class="bi bi-server display-4 text-primary"></i></div>
+                    <h5 class="fw-bold mb-2">Server Setup</h5>
+                    <p class="text-muted">Complete server deployment, security hardening, and infrastructure management.</p>
+                    <span class="text-primary fw-bold" style="font-size:0.85rem;">Click to learn more →</span>
+                </div>
+            </div>
+        </div>
+    </section>    </section>
+
+    <!-- About Privanta Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">About Privanta</h2>
+                    <p class="fs-5 mb-3">Privanta is a focused tech collective dedicated to solving problems through code, design, and innovation. We channel all our energy into delivering exceptional work for our clients.</p>
+                    <p class="fs-5 mb-3">We believe in results over recognition. No corporate hierarchy. No unnecessary self-promotion. Just a team committed to building quality solutions that drive real business impact.</p>
+                    <ul class="fs-5 list-unstyled">
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-3" style="font-size: 1.2rem;"></i><strong>Results-focused</strong> - We measure success by your success</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-3" style="font-size: 1.2rem;"></i><strong>Quality-driven</strong> - Excellence in every project</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-3" style="font-size: 1.2rem;"></i><strong>Direct collaboration</strong> - Work with experienced builders, not layers of management</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-3" style="font-size: 1.2rem;"></i><strong>Proven expertise</strong> - Years of industry experience across multiple domains</li>
+                    </ul>
+                    <a href="about" class="btn btn-primary btn-lg mt-3">Learn More About Us</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-white p-5 rounded-4 shadow-lg">
+                        <h4 class="fw-bold mb-4 text-danger">Our Mission</h4>
+                        <p class="fs-5 mb-4">Transform your ideas into working solutions that create real business value. We build software, design visuals, and implement infrastructure that works.</p>
+                        <h4 class="fw-bold mb-4 text-danger mt-5">What Sets Us Apart</h4>
+                        <p class="text-muted">We skip the hype and focus on delivering. No vanity metrics. No inflated promises. Just solid work that speaks for itself.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-5 bg-gradient" style="position: relative;">
+        <div class="container text-center text-white" style="position: relative; z-index: 1;">
+            <h2 class="display-5 fw-bold mb-4">Ready to Transform Your Ideas?</h2>
+            <p class="lead mb-4">Let's collaborate to create something extraordinary for your business.</p>
+            <button class="btn btn-light btn-lg fw-bold" data-bs-toggle="modal" data-bs-target="#contactModal">
+                Get In Touch Today
+            </button>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="py-5" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">How We Work</h2>
+                <p class="lead text-muted">A simple, transparent process from first conversation to final delivery</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="bg-white rounded-3 p-4 h-100 shadow-sm border-0 hover-glow" onclick="showHowWeWork('idea')" style="cursor:pointer;">
+                        <div class="mb-3" style="font-size: 2rem;">🗣️</div>
+                        <h5 class="fw-bold mb-2">1. Tell Us Your Idea</h5>
+                        <p class="text-muted" style="font-size: 0.95rem;">No technical background needed. Just tell us what you want to achieve and we handle the rest.</p>
+                        <span class="text-primary fw-bold" style="font-size:0.85rem;">Read more →</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-white rounded-3 p-4 h-100 shadow-sm border-0 hover-glow" onclick="showHowWeWork('build')" style="cursor:pointer;">
+                        <div class="mb-3" style="font-size: 2rem;">🛠️</div>
+                        <h5 class="fw-bold mb-2">2. We Plan & Build</h5>
+                        <p class="text-muted" style="font-size: 0.95rem;">Clear project plan, regular updates, and feedback loops at every phase. No surprises.</p>
+                        <span class="text-primary fw-bold" style="font-size:0.85rem;">Read more →</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-white rounded-3 p-4 h-100 shadow-sm border-0 hover-glow" onclick="showHowWeWork('launch')" style="cursor:pointer;">
+                        <div class="mb-3" style="font-size: 2rem;">🚀</div>
+                        <h5 class="fw-bold mb-2">3. Launch & Beyond</h5>
+                        <p class="text-muted" style="font-size: 0.95rem;">Full deployment support, post-launch fixes, and handover docs so you're never left hanging.</p>
+                        <span class="text-primary fw-bold" style="font-size:0.85rem;">Read more →</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-white rounded-3 p-4 h-100 shadow-sm border-0 hover-glow" onclick="showHowWeWork('turnaround')" style="cursor:pointer;">
+                        <div class="mb-3" style="font-size: 2rem;">⏱️</div>
+                        <h5 class="fw-bold mb-2">Fast Turnaround</h5>
+                        <p class="text-muted" style="font-size: 0.95rem;">Milestone-based schedules with early delay warnings. Rush projects accommodated.</p>
+                        <span class="text-primary fw-bold" style="font-size:0.85rem;">Read more →</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-white rounded-3 p-4 h-100 shadow-sm border-0 hover-glow" onclick="showHowWeWork('pricing')" style="cursor:pointer;">
+                        <div class="mb-3" style="font-size: 2rem;">💰</div>
+                        <h5 class="fw-bold mb-2">Transparent Pricing</h5>
+                        <p class="text-muted" style="font-size: 0.95rem;">Itemized quotes before work begins. No hidden fees, no surprise invoices.</p>
+                        <span class="text-primary fw-bold" style="font-size:0.85rem;">Read more →</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-white rounded-3 p-4 h-100 shadow-sm border-0 hover-glow" onclick="showHowWeWork('partnership')" style="cursor:pointer;">
+                        <div class="mb-3" style="font-size: 2rem;">🤝</div>
+                        <h5 class="fw-bold mb-2">Long-Term Partnership</h5>
+                        <p class="text-muted" style="font-size: 0.95rem;">We build relationships, not just deliverables. Returning clients get priority and continuity.</p>
+                        <span class="text-primary fw-bold" style="font-size:0.85rem;">Read more →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Privanta</h5>
+                    <p style="color: #e0e0e0;">Your trusted partner for digital solutions and creative services.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#services" style="color: #e0e0e0;" class="text-decoration-none">Services</a></li>
+                        <li><a href="about" style="color: #e0e0e0;" class="text-decoration-none">About</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); new bootstrap.Modal(document.getElementById('contactModal')).show();" style="color: #e0e0e0;" class="text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Connect With Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" style="color: #e0e0e0;" class="text-decoration-none"><i class="bi bi-facebook"></i></a>
+                        <a href="#" style="color: #e0e0e0;" class="text-decoration-none"><i class="bi bi-twitter"></i></a>
+                        <a href="#" style="color: #e0e0e0;" class="text-decoration-none"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" style="color: #e0e0e0;" class="text-decoration-none"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(230, 57, 70, 0.3);">
+            <div class="text-center" style="color: #d0d0d0;">
+                <p>&copy; 2026 Privanta. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tech Details Modal -->
+    <div class="modal fade" id="techModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="techModalTitle">Technology Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="techDescription"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Details Modal -->
+    <div class="modal fade" id="serviceModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="serviceModalTitle">Service Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="serviceDescription"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Get In Touch</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Service Interest</label>
+                            <select class="form-select" id="service" required>
+                                <option selected disabled>Select a service</option>
+                                <option>Software Services</option>
+                                <option>Video Editing</option>
+                                <option>Photo Editing</option>
+                                <option>Logo Design</option>
+                                <option>Tarp and Banners Custom Design</option>
+                                <option>CCTV Installations</option>
+                                <option>Server Setup</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
