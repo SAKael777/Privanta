@@ -1125,6 +1125,14 @@ h1, h2, h3, h4, h5, h6 {
    MODAL
    ============================================ */
 
+.modal-backdrop {
+    display: none !important;
+}
+
+.modal {
+    background: transparent !important;
+}
+
 .modal-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
     border: none;

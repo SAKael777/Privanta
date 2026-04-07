@@ -927,6 +927,17 @@ function showHeroDetail(key) {
 }
 
 // ============================================
+// Remove modal backdrop on hide
+// ============================================
+
+document.addEventListener('hidden.bs.modal', function() {
+    document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+    document.body.classList.remove('modal-open');
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('padding-right');
+});
+
+// ============================================
 // Log Page Load
 // ============================================
 
