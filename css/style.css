@@ -217,18 +217,16 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
 }
 
-/* Mobile Responsive Styles */
+/* Bubbles: slightly smaller on medium screens */
 @media (max-width: 992px) {
     .hero-icons-container {
         height: 300px;
     }
-
     .hero-icon-circle {
         width: 100px;
         height: 100px;
         font-size: 2.5rem;
     }
-
     .hero-center-icon {
         width: 85px;
         height: 85px;
@@ -236,154 +234,120 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-@media (max-width: 768px) {
+/* Tablet & mobile: col-lg-6 stacks, so bubbles column becomes full-width.
+   Switch to a compact 2×2 grid with center bubble below. */
+@media (max-width: 991px) {
     .hero-section {
-        min-height: 560px;
+        min-height: auto;
     }
-
     .hero-section::before {
         background-attachment: scroll;
-        background-size: contain;
-        background-position: center;
-        opacity: 0.4;
+        opacity: 0.35;
     }
-
     .hero-title {
         font-size: 2rem;
     }
-
     .hero-subtitle {
         font-size: 0.95rem;
     }
 
-    /* Rearrange bubbles into a flat row on tablet */
+    /* Grid layout for bubbles */
     .hero-icons-container {
         position: relative;
         height: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
         gap: 0.75rem;
-        flex-wrap: nowrap;
-        margin-top: 2rem;
-        opacity: 1;
+        width: fit-content;
+        margin: 1.5rem auto 0;
+        padding: 0.5rem;
     }
+
+    /* icon-1 top-left, icon-2 top-right, icon-3 bottom-left, icon-4 bottom-right */
+    .hero-icon-circle.icon-1 { grid-column: 1; grid-row: 1; }
+    .hero-icon-circle.icon-2 { grid-column: 3; grid-row: 1; }
+    .hero-icon-circle.icon-3 { grid-column: 1; grid-row: 2; }
+    .hero-icon-circle.icon-4 { grid-column: 3; grid-row: 2; }
+    .hero-center-icon        { grid-column: 2; grid-row: 1 / span 2; align-self: center; justify-self: center; }
 
     .hero-icon-circle {
         position: static;
         transform: none !important;
-        width: 70px;
-        height: 70px;
-        font-size: 1.6rem;
+        width: 72px;
+        height: 72px;
+        font-size: 1.7rem;
         animation: none !important;
     }
-
     .hero-icon-circle:hover {
-        transform: scale(1.1) !important;
+        transform: scale(1.08) !important;
     }
-
     .hero-center-icon {
         position: static;
         transform: none !important;
-        width: 70px;
-        height: 70px;
-        font-size: 1.6rem;
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
         animation: pulse-center-mobile 2s ease-in-out infinite !important;
     }
 
     @keyframes pulse-center-mobile {
-        0%, 100% {
-            box-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
-        }
-        50% {
-            box-shadow: 0 0 30px rgba(230, 57, 70, 0.6);
-        }
+        0%, 100% { box-shadow: 0 0 20px rgba(230, 57, 70, 0.5); }
+        50%       { box-shadow: 0 0 35px rgba(230, 57, 70, 0.8); }
     }
 }
 
 @media (max-width: 576px) {
     .hero-section {
-        min-height: 480px;
         padding: 1.5rem 0;
     }
-
     .hero-section::before {
-        background-size: contain;
-        background-position: center;
-        opacity: 0.3;
+        opacity: 0.25;
     }
-
     .hero-title {
-        font-size: 1.4rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
     }
-
     .hero-subtitle {
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
+        font-size: 0.82rem;
         line-height: 1.5;
+        margin-bottom: 0.75rem;
     }
-
     .hero-features {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
-
     .hero-features .d-flex {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.6rem;
     }
-
     .hero-features .bi-check-circle-fill {
-        font-size: 1.2rem;
-        margin-right: 0.8rem;
+        font-size: 1rem !important;
+        margin-right: 0.5rem !important;
     }
-
     .hero-features span {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
-    /* Rearrange bubbles into a flat row on mobile */
+    /* Smaller bubbles on phones */
     .hero-icons-container {
-        position: relative;
-        height: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 0.6rem;
-        flex-wrap: nowrap;
-        margin-top: 1.5rem;
-        opacity: 1;
+        gap: 0.5rem;
     }
-
     .hero-icon-circle {
-        position: static;
-        transform: none !important;
-        width: 58px;
-        height: 58px;
-        font-size: 1.4rem;
-        animation: none !important;
-        flex-shrink: 0;
+        width: 56px;
+        height: 56px;
+        font-size: 1.3rem;
     }
-
     .hero-center-icon {
-        position: static;
-        transform: none !important;
-        width: 58px;
-        height: 58px;
-        font-size: 1.4rem;
-        animation: pulse-center-mobile 2s ease-in-out infinite !important;
-        box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
-        flex-shrink: 0;
+        width: 62px;
+        height: 62px;
+        font-size: 1.5rem;
     }
 
     .btn {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.82rem;
+        padding: 0.45rem 0.9rem;
     }
-
     .btn-lg {
-        padding: 0.6rem 1.2rem;
+        padding: 0.55rem 1.1rem;
     }
 }
 
@@ -1593,4 +1557,46 @@ a, button, .btn, .card {
 .service-scroll-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(230, 57, 70, 0.2);
+}
+
+@media (max-width: 768px) {
+    .service-scroll-card {
+        width: 190px;
+        padding: 1.1rem;
+        border-radius: 12px;
+    }
+    .service-scroll-card h5 {
+        font-size: 0.9rem;
+    }
+    .service-scroll-card p {
+        font-size: 0.78rem;
+    }
+    .service-scroll-card .display-4 {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-scroll-card {
+        width: 150px;
+        padding: 0.85rem;
+        border-radius: 10px;
+    }
+    .service-scroll-card h5 {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem !important;
+    }
+    .service-scroll-card p {
+        font-size: 0.7rem;
+        margin-bottom: 0.3rem !important;
+    }
+    .service-scroll-card .display-4 {
+        font-size: 1.6rem !important;
+    }
+    .service-scroll-card span {
+        font-size: 0.7rem !important;
+    }
+    .services-scroll-track {
+        gap: 0.75rem;
+    }
 }
