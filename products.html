@@ -76,8 +76,8 @@
                             <h5 class="card-title fw-bold mb-3">General Point Of Sale System</h5>
                             <p class="card-text text-muted mb-3">Complete wholesale POS solution with inventory management, sales tracking, and comprehensive reporting capabilities.</p>
                             <div class="product-features mb-4">
-                                <span class="badge bg-primary me-2">Whole Sale</span>
-                                <span class="badge bg-success">SaaS</span>
+                                <span class="badge bg-primary me-2" data-bs-toggle="tooltip" title="Business-to-business selling of goods in bulk quantities to retailers or other businesses">Whole Sale</span>
+                                <span class="badge bg-success" data-bs-toggle="tooltip" title="Software as a Service - cloud-based software delivered via subscription model">SaaS</span>
                             </div>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Learn More</button>
                         </div>
@@ -94,7 +94,7 @@
                             <h5 class="card-title fw-bold mb-3">Facial Recognition Identity System</h5>
                             <p class="card-text text-muted mb-3">Advanced AI-powered facial recognition technology for secure identity verification and access control.</p>
                             <div class="product-features mb-4">
-                                <span class="badge bg-success">SaaS</span>
+                                <span class="badge bg-success" data-bs-toggle="tooltip" title="Software as a Service - cloud-based software delivered via subscription model">SaaS</span>
                             </div>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Learn More</button>
                         </div>
@@ -111,7 +111,7 @@
                             <h5 class="card-title fw-bold mb-3">Scholastic Interactive System</h5>
                             <p class="card-text text-muted mb-3">Comprehensive educational platform with interactive learning tools, student management, and progress tracking.</p>
                             <div class="product-features mb-4">
-                                <span class="badge bg-success">SaaS</span>
+                                <span class="badge bg-success" data-bs-toggle="tooltip" title="Software as a Service - cloud-based software delivered via subscription model">SaaS</span>
                             </div>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Learn More</button>
                         </div>
@@ -157,5 +157,15 @@
 
     <!-- Custom JS -->
     <script src="js/script.js"></script>
+
+    <!-- Initialize Tooltips -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
 </body>
 </html>
