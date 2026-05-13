@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Privanta</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-code-slash"></i> Privanta
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="event.preventDefault(); new bootstrap.Modal(document.getElementById('contactModal')).show();">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 bg-gradient">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-white">
+                    <h1 class="display-4 fw-bold mb-4 hero-title">Our Products</h1>
+                    <p class="lead mb-4 hero-subtitle">Cutting-edge software solutions designed to streamline your business operations and enhance productivity.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">Get Started</button>
+                        <a href="#products" class="btn btn-outline-light btn-lg">Explore Products</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="text-center">
+                        <i class="bi bi-box-seam display-1 text-white opacity-75"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Featured Products</h2>
+                <p class="lead text-muted">Innovative SaaS solutions for modern businesses</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- General Point Of Sale System -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <div class="card-body text-center p-4">
+                            <div class="product-icon mb-4">
+                                <i class="bi bi-receipt-cutoff display-4 text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">General Point Of Sale System</h5>
+                            <p class="card-text text-muted mb-3">Complete wholesale POS solution with inventory management, sales tracking, and comprehensive reporting capabilities.</p>
+                            <div class="product-features mb-4">
+                                <span class="badge bg-primary me-2">Whole Sale</span>
+                                <span class="badge bg-success">SaaS</span>
+                            </div>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facial Recognition Identity System -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <div class="card-body text-center p-4">
+                            <div class="product-icon mb-4">
+                                <i class="bi bi-person-check display-4 text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">Facial Recognition Identity System</h5>
+                            <p class="card-text text-muted mb-3">Advanced AI-powered facial recognition technology for secure identity verification and access control.</p>
+                            <div class="product-features mb-4">
+                                <span class="badge bg-success">SaaS</span>
+                            </div>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scholastic Interactive System -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm border-0 product-card">
+                        <div class="card-body text-center p-4">
+                            <div class="product-icon mb-4">
+                                <i class="bi bi-book display-4 text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">Scholastic Interactive System</h5>
+                            <p class="card-text text-muted mb-3">Comprehensive educational platform with interactive learning tools, student management, and progress tracking.</p>
+                            <div class="product-features mb-4">
+                                <span class="badge bg-success">SaaS</span>
+                            </div>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contact Us</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
